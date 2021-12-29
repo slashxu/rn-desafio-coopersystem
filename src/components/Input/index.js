@@ -27,7 +27,7 @@ const Input = props => {
     <Container>
       <InputLabel active={active}>{props.label}</InputLabel>
       <ContainerInput active={active}>
-        <ContainerText>R$</ContainerText>
+        <ContainerText>R$ </ContainerText>
         <InputNumeric
           onChangeText={value => onChangeText(value)}
           onBlur={unfocused}
