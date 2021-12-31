@@ -55,7 +55,7 @@ export default function Rescue({props, route, navigation}) {
         ...errors,
         [action.id]: {
           error: 'Valor não pode ser maior que ' + action.formatedValue,
-          finalError: `Valor invalido na ação: ${action.name}, seu valor máximo disponível é R$ ${action.formatedValue}.\n`,
+          finalError: `Você preencheu um ou mais campos com valor acima do permitido:\n ${action.name}: Valor máximo de R$ ${action.formatedValue}.\n`,
         },
       }));
     } else if (parseFloat(value) <= action.value && actionsErrors[action.id]) {
@@ -80,7 +80,7 @@ export default function Rescue({props, route, navigation}) {
 
   const confirmRescue = () => {
     let textButton = 'OK';
-    let textTitle = 'Atenção!';
+    let textTitle = 'DADOS INVÁLIDOS';
     let textSubtitle = '';
 
     const arrayObj = Object.values(actionsErrors);
